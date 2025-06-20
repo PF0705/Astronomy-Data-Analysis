@@ -80,11 +80,17 @@ from sklearn.cluster import KMeans
 
 ![H-R Diagram](results/H_R_Diagram.png)
 
+*[fig. 1] HRD from Hipparcos data*
+
 ![C-M Diagram](results/C_M_Diagram.png)
+
+*[fig. 2] CMD from Hipparcos data*
 
 가장 보편적인 CMD의 모습은 다음과 같습니다.
 
 ![general C-M Diagram](results/C_M_D_theory.png)
+
+*[fig. 3] General CMD*
 
 - Discussion
 
@@ -104,10 +110,20 @@ HRD와 CMD를 비교해보면 모양이 비슷하나 축의 스케일이 다르�
 
 ![C-M Diagram each](results/C_M_D_clusters.png)
 
+*[fig. 4] CMDs of each clusters*
+
 두 CMD를 겹쳐 그린 결과는 다음과 같습니다.
 
 ![C-M Diagram comparison](results/C_M_D_comparison.png)
 
+*[fig. 5] CMD for comparison*
+
 - Discussion
 
 결과를 보면 위에서 본 CMD의 형태와 다른 것을 볼 수 있습니다. 이는 스케일의 차이가 존재하는 점, cluster member 필터링을 하지 않은 데이터라는 점과 앞에서 말한 겉보기 등급 사용으로 이론과 차이가 있다는 점을 이유로 들 수 있습니다. 그래도 주계열과 그 turnoff(주계열이 끝나는 시점) point는 구별이 가능하고, 겹친 결과를 봤을 때 전체적으로 구상성단이 오른쪽(붉고 온도가 낮은 영역)으로 치우친 개형을 보이는 것으로 이론과 맞는 데이터라고 판단할 수 있을 것 같습니다. 적절한 필터링 등이 더해진다면 더 깔끔한 데이터를 얻을 수 있을 것이고, 전환점 등이 더 잘 보이도록 스케일 조정을 하는 것도 개선할 수 있는 사항 중 하나입니다.
+
+### 2. Comet Data Analysis
+
+#### 1 ) 
+
+## 참고문헌, 코드, 사용 데이터
