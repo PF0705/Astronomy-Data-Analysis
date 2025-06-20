@@ -128,10 +128,77 @@ HRD와 CMD를 비교해보면 모양이 비슷하나 축의 스케일이 다르�
 
 `'Comet_Number', 'Orbit_Type', 'Provisional_Designation', 'Perihelion_Year', 'Perihelion_Month', 'Perihelion_Day', 'Perihelion_Distance_AU', 'Eccentricity', 'Arg_of_Perihelion_deg', 'Asc_Node_deg', 'Inclination_deg', 'Epoch_Year', 'Epoch_Month', 'Epoch_Day', 'Absolute_Magnitude', 'Slope_Parameter', 'Designation_and_Name', 'Reference'`
 
+사용한 주요 데이터를 간략하게 살펴보자면,
 
-#### 1 ) 
+`'Perihelion_Year'` : 혜성이 근일점을 통과한(혹은 통과할거라고 예측되는) 연도 데이터입니다.
+
+`'Perihelion_Distance_AU'` : 혜성의 근일점 거리입니다. 주기와의 비례 관계를 가지므로 주기를 간접적으로 계산할 수 있으며, 혜성의 활동성과도 연관이 어느 정도 있는 물리량입니다.
+
+`'Eccentricity'` : 이심률, 즉 궤도가 찌그러져있는 정도를 뜻하는 물리량이며 근일점 거리 등의 여러 물리량과 관련이 있습니다. 0~1 사이 범위를 가지고 1로 갈수록 더 찌그러진 궤도입니다. 1보다 큰 경우 타원이 아닌 쌍곡선 등의 궤도를 뜻합니다.
+
+`'Inclination_deg'` : 궤도 경사각을 뜻합니다.
+
+#### 1 ) Time series Analysis(Perihelion Point Passing)
+
+- Theory
+
+혜성이 근일점을 지나는 것이 관측되거나(과거), 예측되는(미래) 개수를 연도별로 나타내어 관측 기술의 발전이나 혜성 주기 등의 경향성을 파악할 수 있습니다.
+
+- Result
+
+히스토그램으로 나타내면 다음과 같은 결과를 볼 수 있습니다.
+
+![time analysis](results/passage_year.png)
+
+*[fig. 6] Perihelion passage year histogram*
+
+- Discussion
+
+결과 사진을 보면 현재로 올수록 관측된 혜성의 개수가 증가하는 것을 확인할 수 있는데, 이는 관측 기술의 발전을 시사합니다. 하지만 2006년에 이례적으로 많은 수의 혜성이 관측된 것은 예측에서 벗어난 결과입니다. 관측 기술 덕분이었다면 그 이후에 그보다 많은 혜성이 관측되었어야 하는데, 그렇지는 않은 것을 보아 많은 주기 혜성들의 주기가 우연히 맞아떨어진 등의 원인이 있었을 것이라고 생각할 수 있습니다.
+
+#### 2 ) Relation between Perihelion Distance and Absolute Magnitude
+
+- Theory
+
+근일점 거리와 절대밝기 사이의 상관관계가 있는지 의문이 들어 산점도 plot과 fitting line을 나타내고 Pearson 상관계수를 계산해보았습니다. 이 상수의 값에 따라 상관관계의 경향성이 대략적으로 결정됩니다.
+
+- Result
+
+산점도와 선은 다음과 같이 나타납니다.
+
+![time analysis](results/d_vs_Mag.png)
+
+*[fig. 7] Perihelion Distance vs Absolute Magnitude plot*
+
+Pearson 상관계수 출력 결과는 다음과 같습니다.
+
+`Pearson correlation constant r = -0.415`
+
+- Discussion
+
+상관계수의 값이 -0.7과 -0.4의 중간 값을 가지기 때문에 두 물리량은 약하게 반비례한다는 결론을 내릴 수 있고, 실제로 선이 우하향하는 것으로 확인할 수 있습니다. 다만 데이터 점이 퍼져있는 것을 보아 이상치의 영향을 받았을 가능성을 무시할 수 없고, 이론적으로도 확인된 비례관계가 없으니 약한 경향성으로만 참고하면 좋을 것 같습니다.
+
+#### 3 ) Relation between 
+
+- Theory
 
 
+
+- Result
+
+산점도와 선은 다음과 같이 나타납니다.
+
+![time analysis](results/d_vs_Mag.png)
+
+*[fig. 7] Perihelion Distance vs Absolute Magnitude plot*
+
+Pearson 상관계수 출력 결과는 다음과 같습니다.
+
+`Pearson correlation constant r = `
+
+- Discussion
+
+상관계수의 값이 -0.7과 -0.4의 중간 값을 가지기 때문에 두 물리량은 약하게 반비례한다는 결론을 내릴 수 있고, 실제로 선이 우하향하는 것으로 확인할 수 있습니다. 다만 데이터 점이 퍼져있는 것을 보아 이상치의 영향을 받았을 가능성을 무시할 수 없고, 이론적으로도 확인된 비례관계가 없으니 약한 경향성으로만 참고하면 좋을 것 같습니다.
 
 ---
 
