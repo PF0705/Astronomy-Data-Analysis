@@ -38,7 +38,6 @@ HR 다이어그램(Hertzsprung–Russell diagram)은 별의 절대등급 또는 
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-from sklearn.linear_model import LinearRegression
 from sklearn.preprocessing import StandardScaler
 from sklearn.cluster import KMeans
 ```
@@ -160,7 +159,20 @@ HRD와 CMD를 비교해보면 모양이 비슷하나 축의 스케일이 다르�
 
 - Theory
 
-근일점 거리와 절대밝기 사이의 상관관계가 있는지 의문이 들어 산점도 plot과 fitting line을 나타내고 Pearson 상관계수를 계산해보았습니다. 이 상수의 값에 따라 상관관계의 경향성이 대략적으로 결정됩니다.
+근일점 거리와 절대밝기 사이의 상관관계가 있는지 의문이 들어 산점도 plot과 fitting line을 나타내고 Pearson 상관계수(r)를 계산해보았습니다. 이 상수의 값에 따라 상관관계의 경향성이 대략적으로 결정됩니다.
+
+| r 값 범위              | 해석                         |
+|------------------------|------------------------------|
+| r = +1.0               | 완전한 양의 선형 상관관계     |
+| +0.7 ≤ r < +1.0        | 강한 양의 상관관계            |
+| +0.4 ≤ r < +0.7        | 중간 정도의 양의 상관관계     |
+| +0.1 ≤ r < +0.4        | 약한 양의 상관관계            |
+| -0.1 < r < +0.1        | 거의 없음 (무상관)            |
+| -0.4 < r ≤ -0.1        | 약한 음의 상관관계            |
+| -0.7 < r ≤ -0.4        | 중간 정도의 음의 상관관계     |
+| -1.0 ≤ r ≤ -0.7        | 강한 음의 상관관계            |
+| r = -1.0               | 완전한 음의 선형 상관관계     |
+
 
 - Result
 
@@ -205,6 +217,7 @@ Pearson 상관계수 출력 결과는 다음과 같습니다.
 ## 참고문헌, 코드, 사용 데이터
 
 - reference
+gpt
 
 - code
 
