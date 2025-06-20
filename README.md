@@ -44,8 +44,11 @@ from sklearn.cluster import KMeans
 ## 프로젝트
 
 ### 1. H-R Diagrams of Stars and Clusters
-1 ) HRD of Stars
 
+#### 1 ) HRD of Stars
+
+- Theory
+- 
 성단의 구분 없이 가능한 많은 별들에 대해 H-R도를 그리고 보편적 H-R도의 형태와 비교, 이론적인 별들의 종족과 진화 단계 등을 파악하고자 하였습니다.
 
 사용한 데이터는 Hipparcos 위성에 의해 작성된 카탈로그 데이터입니다. 데이터의 구성(pandas로 읽어와 출력한 column 이름)은 다음과 같습니다.
@@ -68,8 +71,23 @@ from sklearn.cluster import KMeans
 
 `'log_T'` : 표면온도에 로그를 취한 값입니다. 표면온도는 $T_{\text{eff}} = 4600 \left( \frac{1}{0.92(B - V) + 1.7} + \frac{1}{0.92(B - V) + 0.62} \right)$(Ballesteros 공식)로 계산할 수 있으며 $B-V$는 색지수를 뜻합니다.
 
+- Result
+
 계산한 데이터들로부터 그린 HRD, CMD는 다음와 같습니다.
 
 ![H-R Diagram](results/H_R_Diagram.png)
 
 ![C-M Diagram](results/C_M_Diagram.png)
+
+가장 보편적인 CMD의 모습은 다음과 같습니다.
+
+![general C-M Diagram](results/C_M_D_theory.png)
+
+- Discussion
+
+HRD와 CMD를 비교해보면 모양이 비슷하나 축의 스케일이 다르다는 것을 알 수 있습니다. 이는 위의 수식에도 잘 맞는 결과입니다.
+
+직접 그린 CMD와 보편적 CMD는 거의 비슷한 모양을 나타냅니다. 다만 CMD를 그릴 때 proper motion 등을 이용해 필터링하지 않았기 때문에 그런지 조금 더 위아래로 퍼진 모습을 보입니다. 전체적으로 별의 주계열과 거성가지 등이 잘 나타나 있어 이론적인 별의 진화 경로와도 매칭이 잘 됩니다. 백색왜성과 밝은 주계열성 부분은 상대적으로 적게 나타나는 것을 보아, 계산 오차 등을 감안하더라도 사용한 데이터가 한정적이기 때문에 아주 젊거나 아주 늙은 성단의 데이터는 포함하지 못했음을 추측할 수 있습니다.
+
+#### 2 ) HRD of Clusters
+
