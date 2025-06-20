@@ -124,6 +124,31 @@ HRD와 CMD를 비교해보면 모양이 비슷하나 축의 스케일이 다르�
 
 ### 2. Comet Data Analysis
 
+사용한 데이터의 구성은 다음과 같습니다.
+
+`'Comet_Number', 'Orbit_Type', 'Provisional_Designation', 'Perihelion_Year', 'Perihelion_Month', 'Perihelion_Day', 'Perihelion_Distance_AU', 'Eccentricity', 'Arg_of_Perihelion_deg', 'Asc_Node_deg', 'Inclination_deg', 'Epoch_Year', 'Epoch_Month', 'Epoch_Day', 'Absolute_Magnitude', 'Slope_Parameter', 'Designation_and_Name', 'Reference'`
+
+
 #### 1 ) 
 
+
+
+---
+
 ## 참고문헌, 코드, 사용 데이터
+
+- reference
+
+- code
+
+코드는 anaconda 가상환경을 사용해 jupyter notebook 파일로 작성되었으며, repository의 notebooks 폴더에서 보실 수 있습니다. 사용한 라이브러리는 위에 명시되어 있습니다.
+
+- data
+
+데이터는 첨부를 시도하였으나 github의 용량 한계로, 출처 링크를 대신 남깁니다. 필요할 경우 아래 링크에서 다운받아주시면 됩니다.
+
+https://www.kaggle.com/datasets/konivat/hipparcos-star-catalog?resource=download (전체 HRD, CMD에 사용한 데이터)
+
+https://www.kaggle.com/datasets/esatakkasoglu/star-clusters-47-tuc-globular-and-ngc188-open/data (성단 분석에 사용한 데이터)
+
+https://www.minorplanetcenter.net/iau/MPCORB/CometEls.txt (혜성 분석에 사용한 데이터)
