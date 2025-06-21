@@ -1,6 +1,6 @@
 # 천문학 데이터 시각화 및 분석 프로젝트
 
-이 프로젝트는 공개된 천문학 데이터를 이용해 H-R 다이어그램을 시각화하고, 구상성단과 산개성단의 H-R diagram 차이를 비교하며, 혜성의 궤도 데이터를 분석하는 과정입니다. 모든 분석은 Python과 Jupyter Notebook을 사용하여 수행되었습니다. Python을 이용하여 여러 데이터를 불러오고, 읽고 시각화하여 분석하는 과정을 보 심도 있게 학습하는 것을 중점으로 두었으며, 전공 지식을 활용하여 유의미한 결과를 확인하려고 노력했습니다.
+이 프로젝트는 공개된 천문학 데이터를 이용해 H-R 다이어그램을 시각화하고, 구상성단과 산개성단의 H-R diagram 차이를 비교하며, 혜성의 궤도 데이터를 분석하는 과정입니다. 모든 분석은 Python과 Jupyter Notebook을 사용하여 수행되었습니다. Python을 이용하여 여러 데이터를 불러오고, 읽고 시각화하여 분석하는 과정(numpy, matplotlib, pandas 활용)을 보다 심도 있게 학습하는 것을 중점으로 두었으며, 전공 지식을 활용하여 유의미한 결과를 확인하려고 노력했습니다.
 
 ---
 
@@ -230,13 +230,25 @@ Pearson 상관계수 출력 결과는 다음과 같습니다.
 
 - Result
 
-![e](results/ecc_distribution.png)
+이심률과 근일점 거리를 이용한 K-means clustering 결과는 다음과 같습니다.
 
-*[fig. 9] Eccentricity Distribution Histogram*
+![cluster1](results/clustering.png)
+
+*[fig. 10] K-means Clustering(Eccentricity/Perihelion distance)*
+
+궤도 경사각과 근일점 거리를 이용한 K-means clustering 결과는 다음과 같습니다.
+
+![cluster2](results/clustering2.png)
+
+*[fig. 11] K-means Clustering(Orbit inclination/Perihelion distance)*
 
 - Discussion
 
+이심률과 근일점 거리 사이의 군집들을 보면 초록색과 노란색은 서로 명확히 구분되지만 초록색과 보라색은 그렇지 않습니다. 보라색은 이심률이 1 근처인 혜성들이기 때문에 장주기 혜성에 대해서 어떤 결과를 내기는 어려울 것 같고, 그렇지 않은 단주기 혜성들 사이에는 무언가 연관성이 있을 것이라고 생각할 수 있습니다.
 
+궤도 경사각과 근일점 거리 사이의 군집들을 보면 서로 구분되지 않거나, 너무 퍼져있어 군집으로 볼 수 없는 결과들이 나온 것을 보아 유의미한 구분은 어려울 것이라고 예측할 수 있습니다.
+
+클러스터링 후 추가적인 통계적 분석은 관련 지식의 부족으로 하지 못했는데, 그런 분석을 하거나 군집의 수를 다르게 하여 비교해 본다면 더 명확한 결과를 낼 수 있을 것 같습니다.
 
 ---
 
