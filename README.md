@@ -155,11 +155,11 @@ HRD와 CMD를 비교해보면 모양이 비슷하나 축의 스케일이 다르�
 
 결과 사진을 보면 현재로 올수록 관측된 혜성의 개수가 증가하는 것을 확인할 수 있는데, 이는 관측 기술의 발전을 시사합니다. 하지만 2006년에 이례적으로 많은 수의 혜성이 관측된 것은 예측에서 벗어난 결과입니다. 관측 기술 덕분이었다면 그 이후에 그보다 많은 혜성이 관측되었어야 하는데, 그렇지는 않은 것을 보아 많은 주기 혜성들의 주기가 우연히 맞아떨어진 등의 원인이 있었을 것이라고 생각할 수 있습니다.
 
-#### 2 ) Relation between Perihelion Distance and Absolute Magnitude
+#### 2 ) Relation between Physical Quantities
 
 - Theory
 
-근일점 거리와 절대밝기 사이의 상관관계가 있는지 의문이 들어 산점도 plot과 fitting line을 나타내고 Pearson 상관계수(r)를 계산해보았습니다. 이 상수의 값에 따라 상관관계의 경향성이 대략적으로 결정됩니다.
+데이터에 있는 물리량 사이의 상관관계가 있는지 의문이 들어 산점도 plot과 fitting line을 나타내고 Pearson 상관계수(r)를 계산해보았습니다. 이 상수의 값에 따라 상관관계의 경향성이 대략적으로 결정됩니다.
 
 | r 값 범위              | 해석                         |
 |------------------------|------------------------------|
@@ -173,10 +173,12 @@ HRD와 CMD를 비교해보면 모양이 비슷하나 축의 스케일이 다르�
 | -1.0 ≤ r ≤ -0.7        | 강한 음의 상관관계            |
 | r = -1.0               | 완전한 음의 선형 상관관계     |
 
+가장 관련이 있을 것 같은 근일점 거리와 절대밝기, 이심률과 공전주기 사이의 상관관계를 분석해보았습니다.
+
 
 - Result
 
-산점도와 선은 다음과 같이 나타납니다.
+근일점 거리와 절대밝기 사이의 산점도와 선은 다음과 같이 나타납니다.
 
 ![time analysis](results/d_vs_Mag.png)
 
@@ -186,11 +188,41 @@ Pearson 상관계수 출력 결과는 다음과 같습니다.
 
 `Pearson correlation constant r = -0.415`
 
+이심률과 공전주기 사이의 산점도와 선은 다음과 같이 나타납니다.
+
+![time analysis](results/ecc_vs_P.png)
+
+*[fig. 8] Eccentricity vs Orbital Period plot*
+
+Pearson 상관계수 출력 결과는 다음과 같습니다.
+
+`Pearson correlation constant r = 0.987`
+
 - Discussion
 
-상관계수의 값이 -0.7과 -0.4의 중간 값을 가지기 때문에 두 물리량은 약하게 반비례한다는 결론을 내릴 수 있고, 실제로 선이 우하향하는 것으로 확인할 수 있습니다. 다만 데이터 점이 퍼져있는 것을 보아 이상치의 영향을 받았을 가능성을 무시할 수 없고, 이론적으로도 확인된 비례관계가 없으니 약한 경향성으로만 참고하면 좋을 것 같습니다.
+근일점 거리와 절대밝기 사이의 경우, 상관계수의 값이 -0.7과 -0.4의 중간 값을 가지기 때문에 두 물리량은 약하게 반비례한다는 결론을 내릴 수 있고, 실제로 선이 우하향하는 것으로 확인할 수 있습니다. 절대밝기가 밝을수록 혜성의 활동성이 더 크다고 말하는데, 태양에 더 가까이 지날수록 그럴 가능성이 높다고 하는 연구도 존재합니다. 다만 데이터 점이 퍼져있는 것을 보아 이상치의 영향을 받았을 가능성을 무시할 수 없고, 이론적으로도 확인된 비례관계가 없으니 약한 경향성(예외 다수 존재)으로만 참고하면 좋을 것 같습니다. 
 
-#### 3 ) Relation between 
+이심률과 공전주기 사이의 경우, 상관계수의 값이 1에 가까운 값으로 강한 비례관계를 보입니다. fitting한 선을 보면 우상향하고, 선에서 벗어나있는 점들도 이심률이 커질수록 주기가 커지는 경향성을 보입니다. 이는 이론적으로도 이심률이 클수록 같은 장반경에 대해 더 긴 둘레를 가지고(속도 같을 경우 시간 더 소요), 이심률이 매우 클 경우 쌍곡선 궤도(돌아오지 않음, 이론적인 주기 $\infty$) 등이 될 수 있기 때문에 잘 맞는 결과라고 할 수 있습니다. 
+
+#### 3 ) Eccentricity Distribution
+
+- Theory
+
+관측된 혜성들의 이심률 분포를 히스토그램으로 나타내보았습니다. 이심률이 1보다 큰 혜성들은 지나가면 다시 돌아오지 않기 때문에 관측에는 우연이 필요하고, 따라서 많이 없을 것이라고 예측하고 분석을 진행하였습니다.
+
+- Result
+
+이심률 분포 히스토그램은 다음과 같이 출력되었습니다.
+
+![time analysis](results/ecc_distribution.png)
+
+*[fig. 9] Eccentricity Distribution Histogram*
+
+- Discussion
+
+예측대로 이심률이 1 미만인 혜성이 더 많이 나타났으나, 특이한 점은 정확히 이심률이 1인 혜성이 많다는 것이었습니다. 조사해보니 이 원인으로는 크게 2가지가 있었습니다. 첫 번째는 장주기 혜성들의 근원이라고 추측하는 오르트구름(Oort cloud)에서 온 혜성들은 이심률이 매우 큰 긴 타원 궤도 또는 쌍곡선 궤도에 가까운 경우가 대다수기 때문에 이심률이 거의 1에 가깝기 때문입니다. 오르트구름은 매우 멀기 때문에 태양까지 도달하기 위해서는 큰 이심률 궤도가 필요하고, 이를 관측하면 이심률이 1에 가까워 근사하면 1로 입력되는 경우가 많다고 합니다. 그리고 실제로 장주기 혜성이 굉장히 많기 때문에 이러한 분포가 나오는 것이라고 추측할 수 있습니다. 두 번째로는 관측의 한계입니다. 혜성의 궤도 전체를 관측하기란 사실상 불가능하기 때문에 태양에 근접한 순간의 데이터를 가지고 궤도를 fitting하는 작업이 필요한데, 이 과정에서(특히 관측 시간이 짧을 때) 이심률이 1 또는 그 이상으로 계산되는 경우가 잦고, 1로 가정한 후 정밀화하는 작업을 실행하기도 하기 때문에 정확히 1로 입력되어있는 혜성이 생각보다 많고, 이 혜성들은 사실 1에 가까운 이심률을 가지고 있는 것이라는 추측이 가능합니다.
+
+#### 4 ) K-means Clustering
 
 - Theory
 
@@ -198,32 +230,31 @@ Pearson 상관계수 출력 결과는 다음과 같습니다.
 
 - Result
 
-산점도와 선은 다음과 같이 나타납니다.
 
-![time analysis](results/d_vs_Mag.png)
-
-*[fig. 7] Perihelion Distance vs Absolute Magnitude plot*
-
-Pearson 상관계수 출력 결과는 다음과 같습니다.
-
-`Pearson correlation constant r = `
 
 - Discussion
 
-상관계수의 값이 -0.7과 -0.4의 중간 값을 가지기 때문에 두 물리량은 약하게 반비례한다는 결론을 내릴 수 있고, 실제로 선이 우하향하는 것으로 확인할 수 있습니다. 다만 데이터 점이 퍼져있는 것을 보아 이상치의 영향을 받았을 가능성을 무시할 수 없고, 이론적으로도 확인된 비례관계가 없으니 약한 경향성으로만 참고하면 좋을 것 같습니다.
+
 
 ---
 
 ## 참고문헌, 코드, 사용 데이터
 
-- reference
-gpt
+- Reference
 
-- code
+Janes, Kenneth A., and Sadia Hoq. 2011. “A Quantitative Analysis of Distant Open Clusters.” *The Astronomical Journal* 141 (3): 92. (https://iopscience.iop.org/article/10.1088/0004-6256/141/3/92)
+
+Mazzotta Epifani, E., P. Palumbo, and L. Colangeli. 2009. “A Survey on the Distant Activity of Short Period Comets.” *Astronomy & Astrophysics* 508 (2): 1031–1044. (https://www.aanda.org/articles/aa/abs/2009/47/aa12611-09/aa12611-09.html)
+
+https://www.wired.com/story/so-youve-found-a-comet-with-a-weird-orbit/
+
+Chat GPT(Various computations, Pearson constant, K-means clustering, etc.)
+
+- Code
 
 코드는 anaconda 가상환경을 사용해 jupyter notebook 파일로 작성되었으며, repository의 notebooks 폴더에서 보실 수 있습니다. 사용한 라이브러리는 위에 명시되어 있습니다.
 
-- data
+- Data
 
 데이터는 첨부를 시도하였으나 github의 용량 한계로, 출처 링크를 대신 남깁니다. 필요할 경우 아래 링크에서 다운받아주시면 됩니다.
 
