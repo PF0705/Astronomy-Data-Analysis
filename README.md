@@ -1,6 +1,6 @@
 # 천문학 데이터 시각화 및 분석 프로젝트
 
-이 프로젝트는 공개된 천문학 데이터를 이용해 H-R 다이어그램을 시각화하고, 구상성단과 산개성단의 H-R diagram 차이를 비교하며, 혜성의 궤도 데이터를 분석합니다. 모든 분석은 Python과 Jupyter Notebook을 사용하여 수행되었습니다.
+이 프로젝트는 공개된 천문학 데이터를 이용해 H-R 다이어그램을 시각화하고, 구상성단과 산개성단의 H-R diagram 차이를 비교하며, 혜성의 궤도 데이터를 분석하는 과정입니다. 모든 분석은 Python과 Jupyter Notebook을 사용하여 수행되었습니다. Python을 이용하여 여러 데이터를 불러오고, 읽고 시각화하여 분석하는 과정을 보 심도 있게 학습하는 것을 중점으로 두었으며, 전공 지식을 활용하여 유의미한 결과를 확인하려고 노력했습니다.
 
 ---
 
@@ -153,7 +153,7 @@ HRD와 CMD를 비교해보면 모양이 비슷하나 축의 스케일이 다르�
 
 - Discussion
 
-결과 사진을 보면 현재로 올수록 관측된 혜성의 개수가 증가하는 것을 확인할 수 있는데, 이는 관측 기술의 발전을 시사합니다. 하지만 2006년에 이례적으로 많은 수의 혜성이 관측된 것은 예측에서 벗어난 결과입니다. 관측 기술 덕분이었다면 그 이후에 그보다 많은 혜성이 관측되었어야 하는데, 그렇지는 않은 것을 보아 많은 주기 혜성들의 주기가 우연히 맞아떨어진 등의 원인이 있었을 것이라고 생각할 수 있습니다.
+결과 사진을 보면 현재로 올수록 관측된 혜성의 개수가 증가하는 것을 확인할 수 있는데, 이는 관측 기술의 발전을 시사합니다. 하지만 2006년에 이례적으로 많은 수의 혜성이 관측된 것은 예측에서 벗어난 결과입니다. 관측 기술 덕분이었다면 그 이후에 그보다 많은 혜성이 관측되었어야 하는데, 그렇지는 않은 것을 보아 많은 주기 혜성들의 주기가 우연히 맞아떨어진 것 등의 원인이 있었을 것이라고 생각할 수 있습니다.
 
 #### 2 ) Relation between Physical Quantities
 
@@ -180,7 +180,7 @@ HRD와 CMD를 비교해보면 모양이 비슷하나 축의 스케일이 다르�
 
 근일점 거리와 절대밝기 사이의 산점도와 선은 다음과 같이 나타납니다.
 
-![time analysis](results/d_vs_Mag.png)
+![distance, magnitude comparison](results/d_vs_Mag.png)
 
 *[fig. 7] Perihelion Distance vs Absolute Magnitude plot*
 
@@ -190,7 +190,7 @@ Pearson 상관계수 출력 결과는 다음과 같습니다.
 
 이심률과 공전주기 사이의 산점도와 선은 다음과 같이 나타납니다.
 
-![time analysis](results/ecc_vs_P.png)
+![ecc, period comparison](results/ecc_vs_P.png)
 
 *[fig. 8] Eccentricity vs Orbital Period plot*
 
@@ -214,7 +214,7 @@ Pearson 상관계수 출력 결과는 다음과 같습니다.
 
 이심률 분포 히스토그램은 다음과 같이 출력되었습니다.
 
-![time analysis](results/ecc_distribution.png)
+![eccentricity distriution](results/ecc_distribution.png)
 
 *[fig. 9] Eccentricity Distribution Histogram*
 
@@ -226,11 +226,13 @@ Pearson 상관계수 출력 결과는 다음과 같습니다.
 
 - Theory
 
-
+혜성을 물리량을 이용해 분류할 수 있는지(구분지어지는지) 알아보기 위해 K-means clustering을 이용해 분석해보았습니다. 이심률과 근일점 거리, 궤도 경사각과 근일점 거리 사이에서 혜성들이 구분 가능한 군집을 이루는지 판단하는 작업입니다. 사용한 군집의 수는 3개입니다. 군집이 구분되게 형성될수록 혜성이 그 물리량 하에서 독립적인 상태를 가진다고 판단할 수 있습니다.
 
 - Result
 
+![e](results/ecc_distribution.png)
 
+*[fig. 9] Eccentricity Distribution Histogram*
 
 - Discussion
 
