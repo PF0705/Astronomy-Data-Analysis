@@ -272,8 +272,8 @@ Chat GPT(Various computations, Pearson constant, K-means clustering, etc.)
 
 데이터는 첨부를 시도하였으나 github의 용량 한계로, 출처 링크를 대신 남깁니다. 필요할 경우 아래 링크에서 다운받아주시면 됩니다.
 
-https://www.kaggle.com/datasets/konivat/hipparcos-star-catalog?resource=download (전체 HRD, CMD에 사용한 데이터)
+https://www.kaggle.com/datasets/konivat/hipparcos-star-catalog?resource=download (hipparcos-voidmain.csv / 전체 HRD, CMD에 사용한 데이터)
 
-https://www.kaggle.com/datasets/esatakkasoglu/star-clusters-47-tuc-globular-and-ngc188-open/data (성단 분석에 사용한 데이터)
+https://www.kaggle.com/datasets/esatakkasoglu/star-clusters-47-tuc-globular-and-ngc188-open/data (ngc188_data.csv, tuc47_data.csv / 성단 분석에 사용한 데이터)
 
-https://www.minorplanetcenter.net/iau/MPCORB/CometEls.txt (혜성 분석에 사용한 데이터)
+https://www.minorplanetcenter.net/iau/MPCORB/CometEls.txt (CometEls.txt / 혜성 분석에 사용한 데이터)
